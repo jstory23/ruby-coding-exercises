@@ -1,6 +1,19 @@
 require 'rspec'
 
 def fraction_calculator fraction_one, fraction_two, operator
+  num_1 = Rational(fraction_one)
+  num_2 = Rational(fraction_two)
+
+
+  product = case operator
+  when  '/' then num_1 / num_2
+  when  '*' then num_1 * num_2
+  when  '+' then num_1 + num_2
+  when  '-' then num_1 - num_2
+
+  end
+product.to_s
+
 end
 
 describe 'Fraction multiplication' do
@@ -11,4 +24,3 @@ describe 'Fraction multiplication' do
     expect(fraction_calculator("1/3", "2/4", "-")).to eq("-1/6")
   end
 end
-

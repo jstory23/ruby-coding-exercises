@@ -1,6 +1,7 @@
 require 'rspec'
 
 def title_builder headers, data
+  Hash[headers.zip(data)]
 end
 
 describe 'Hash builder' do
@@ -12,4 +13,3 @@ describe 'Hash builder' do
                                               "rating"=>5})
   end
 end
-

@@ -7,6 +7,8 @@ menu = {
 }
 
 def daily_special hash
+  menu_items = []
+  hash.map {|category| menu_items << category.last}.flatten.sample
 end
 
 describe 'Nested hash element selector' do
@@ -14,4 +16,3 @@ describe 'Nested hash element selector' do
     expect(daily_special(menu).class).to eq(String)
   end
 end
-
